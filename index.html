@@ -2,20 +2,22 @@
 <html>
   <head>
     <title>Digital Clock</title>
+    <link href="css/style.css" rel="stylesheet" />
     <style>
       @font-face {
         font-family: DigitalClock;
         src: url("digital-7.regular.ttf");
       }
-      h1 {
-        font-size: 70px;
-        font-family: DigitalClock;
-        text-align: center;
-        color: red;
-      }
     </style>
   </head>
-  <body style="background-color: black;">
-    <h1><strong>21:19:00</strong></h1>
+  <body>
+    <main>
+    <h1 class="timeDisplay">21:19:00</h1>
+    <h1 class="dateDisplay">Today</h1>
+    <div >
+      <input class=MilitaryTimeButton onclick="changeTimeFormat()" type="button" value="12hr Time">
+    </div>
+    <script src="clock.js"></script>
+  </main>
   </body>
 </html>
