@@ -27,18 +27,18 @@ d[6] = "Saturday";
 var currentWeekDayText = d[currentWeekDayNumber];
 
 var m = new Array(12);
-m[1] = "January";
-m[2] = "February";
-m[3] = "March";
-m[4] = "April";
-m[5] = "May";
-m[6] = "June";
-m[7] = "July";
-m[8] = "August";
-m[9] = "September";
-m[10] = "October";
-m[11] = "November";
-m[12] = "December";
+m[0] = "January";
+m[1] = "February";
+m[2] = "March";
+m[3] = "April";
+m[4] = "May";
+m[5] = "June";
+m[6] = "July";
+m[7] = "August";
+m[8] = "September";
+m[9] = "October";
+m[10] = "November";
+m[11] = "December";
 
 var currentMonthText = m[currentMonth];
 
