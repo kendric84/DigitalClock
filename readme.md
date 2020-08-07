@@ -6,11 +6,11 @@
 ## General info
 This project is a web based digital clock dispalying the currnet date and time, with the option to switch between 12hr and Military Time.
 
-# Technologies
+## Technologies
 Project is created with:
 * HTML5
 * Javascript
 * CSS
 
-# Setup
+## Setup
 Lauch with Live Server plugin. Extension ID = ritwickdey.liveserver
