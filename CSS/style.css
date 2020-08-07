@@ -14,7 +14,7 @@ h1 {
     /* how can I get these to vertically center? */
 }
 
-.MilitaryTimeButton {
+.military-time-button {
     display: flex;
     margin-top: 25px;
     margin-left: 270px;
