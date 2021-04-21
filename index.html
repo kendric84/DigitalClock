@@ -3,21 +3,20 @@
   <head>
     <title>Digital Clock</title>
     <link href="./CSS/style.css" rel="stylesheet" />
-    <style>
-      @font-face {
-        font-family: DigitalClock;
-        src: url("digital-7.regular.ttf");
-      }
-    </style>
   </head>
   <body>
     <main>
-    <h1 class="time-display">21:19:00</h1>
-    <h1 class="date-display">Today</h1>
-    <div >
-      <input class="military-time-button" onclick="changeTimeFormat()" type="button" value="12hr Time">
-    </div>
-    <script src="clock.js"></script>
-  </main>
+      <h1 class="time-display" id="time-display">21:19:00</h1>
+      <h1 class="date-display" id="date-display">Today</h1>
+      <div>
+        <input
+          class="military-time-button"
+          id="toggle-btn"
+          type="button"
+          value="12hr Time"
+        />
+      </div>
+      <script src="clock.js"></script>
+    </main>
   </body>
 </html>

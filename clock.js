@@ -1,111 +1,67 @@
-// Get elements from UI
-let displayTime = document.getElementsByClassName("time-display");
-let timeStyleButtonValue = document.getElementsByClassName("military-time-button");
-let displayDate = document.getElementsByClassName("date-display");
+let displayTime = document.getElementById("time-display");
+let displayDate = document.getElementById("date-display");
+const MILITARY_TIME = "Military Time"
+const STANDARD_TIME = "12hr Time"
 
-// Set variables for all date & time elements
-// Find necessary values for displaying date and time in proper format
+const toggleButton = document.getElementById("toggle-btn");
+toggleButton.addEventListener("click", function (e) {
+  toggleButton.value =
+    toggleButton.value == STANDARD_TIME ? MILITARY_TIME : STANDARD_TIME;
+  setDateTime();
+});
+
 function setDateTime() {
+  const currentDate = new Date();
+  let currentHour = currentDate.getHours();
+  let amPm = "";
 
-let currentDate = new Date();
-let currentHour = currentDate.getHours();
-let currentMinute = currentDate.getMinutes();
-let currentSecond = currentDate.getSeconds();
-let currentDay = currentDate.getDate();
-let currentWeekDayNumber = currentDate.getDay();
-let currentMonthNumber = currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
-let currentSecondString = currentSecond.toString();
-let currentMinuteString = currentMinute.toString();
-let currentWeekDayText = "";
-let currentMonthText = "";
-let AmPm = "";
+  let d = new Array(7);
+  d[0] = "Sunday";
+  d[1] = "Monday";
+  d[2] = "Tuesday";
+  d[3] = "Wednesday";
+  d[4] = "Thursday";
+  d[5] = "Friday";
+  d[6] = "Saturday";
 
-// Find the day of the week as text
-let d = new Array(7);
-d[0] = "Sunday";
-d[1] = "Monday";
-d[2] = "Tuesday";
-d[3] = "Wednesday";
-d[4] = "Thursday";
-d[5] = "Friday";
-d[6] = "Saturday";
+  let m = new Array(12);
+  m[0] = "January";
+  m[1] = "February";
+  m[2] = "March";
+  m[3] = "April";
+  m[4] = "May";
+  m[5] = "June";
+  m[6] = "July";
+  m[7] = "August";
+  m[8] = "September";
+  m[9] = "October";
+  m[10] = "November";
+  m[11] = "December";
 
-currentWeekDayText = d[currentWeekDayNumber];
-
-// Find the month value as text
-let m = new Array(12);
-m[0] = "January";
-m[1] = "February";
-m[2] = "March";
-m[3] = "April";
-m[4] = "May";
-m[5] = "June";
-m[6] = "July";
-m[7] = "August";
-m[8] = "September";
-m[9] = "October";
-m[10] = "November";
-m[11] = "December";
-
-currentMonthText = m[currentMonthNumber];
-
-// Add leading zero if the current second or minute value is only one character
-if (currentSecondString.length == 1) {
-  currentSecondString = "0" + currentSecondString;
-}
-
-if (currentMinuteString.length == 1) {
-    currentMinuteString = "0" + currentMinuteString;
+  function formatTime(time) {
+    return time < 10 ? "0" + time : time;
   }
 
-// Set the selected time format
-if (timeStyleButtonValue[0].value == "Military Time") {
+  if (toggleButton.value == STANDARD_TIME) {
+    amPm = currentHour >= 12 ? "PM" : "AM";
+    currentHour = currentHour >= 13 ? currentHour - 12 : currentHour;
+  } else {
+    amPm = "";
+    currentHour = formatTime(currentHour);
+  }
 
-    if (currentHour >= 12) {
+  displayTime.textContent = 
+  `${currentHour}:${formatTime(currentDate.getMinutes())}:
+  ${formatTime(currentDate.getSeconds())} 
+  ${amPm}`;
 
-        AmPm = " PM"
-
-    } else {
-
-        AmPm = " AM"
-    }
-
-    if (currentHour >= 13) {
-
-        currentHour = currentHour -12
-    }
-
-} else {
-    AmPm = ""
-    if (currentHour < 10) {
-        currentHour = "0" + currentHour
-    }
-}
-
-// Update UI elements with correct date and time
-displayTime[0].textContent =
-  currentHour + ":" + currentMinuteString + ":" + currentSecondString + AmPm;
-
-  displayDate[0].textContent = currentWeekDayText + ", " + currentMonthText + " " + currentDay + ", " + currentYear
-
-}
-
-// When button is pressed, update button text and run setDateTime funciton
-function changeTimeFormat() {
-
-    if (timeStyleButtonValue[0].value == "12hr Time") {
-        timeStyleButtonValue[0].value = "Military Time"
-        setDateTime();
-
-    } else {
-        timeStyleButtonValue[0].value = "12hr Time"
-        setDateTime();
-    }
-
+  displayDate.textContent = 
+  `${d[currentDate.getDay()]}, 
+  ${m[currentDate.getMonth()]} 
+  ${currentDate.getDate()}, 
+  ${currentDate.getFullYear()}`;
 }
 
 setDateTime();
 
-// Refresh screen every 1 second
 setInterval(setDateTime, 1000);

@@ -7,8 +7,9 @@
         {
             "type": "edge",
             "request": "launch",
-            "name": "Launch Edge against localhost",
-            "url": "http://127.0.0.1:80",
+            "version":"stable",
+            "name": "Edge",
+            "url": "http://localhost:5502",
             "webRoot": "${workspaceFolder}"
         }
     ]

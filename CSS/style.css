@@ -1,32 +1,34 @@
-
+@font-face {
+    font-family: DigitalClock;
+    src: url("../digital-7.regular.ttf");
+  }
 
 h1 {
-    font-size: 50px;
-    font-family: DigitalClock;
-    width: 550px;
-    height: 100px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    color: red;
-    border: solid 5px darkgray;
-    background-color: black;
-    /* how can I get these to vertically center? */
+  font-size: 50px;
+  font-family: DigitalClock;
+  width: 600px;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  color: red;
+  border: solid 5px darkgray;
+  background-color: black;
+  /* how can I get these to vertically center? */
 }
 
 .military-time-button {
-    display: flex;
-    margin-top: 25px;
-    margin-left: 270px;
-
+  display: flex;
+  margin-top: 25px;
+  margin-left: 270px;
 }
 
 main {
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
-    background-color: lightgray;
+  background-color: lightgray;
 }
