@@ -1,16 +1,13 @@
-## Table of contents
-* [General info](#general-info)
-* [Technologies](#technologies)
-* [Setup](#setup)
+# Vanilla JavaScript Digital Clock
 
-## General info
-This project is a web based digital clock dispalying the currnet date and time, with the option to switch between 12hr and Military Time.
+*A simple digital clock app written in pure JavaScript, HTML, and CSS*
 
-## Technologies
-Project is created with:
-* HTML5
-* Javascript
-* CSS
+Download it [here](https://github.com/kendric84/DigitalClock)
 
-## Setup
-Lauch with Live Server plugin. Extension ID = ritwickdey.liveserver
+![App Screenshot](ss.png)
+
+## Summary
+This simple digital clock will allow you to switch between 12 hour time and military time.
+
+## Author
+- **Graham Smith** - Full-Stack Software Developer - [GrahamS.tech](https://www.grahams.tech)
