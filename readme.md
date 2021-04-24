@@ -2,7 +2,7 @@
 
 *A simple digital clock app written in pure JavaScript, HTML, and CSS*
 
-Download it [here](https://github.com/kendric84/DigitalClock)
+See it [here](https://kendric84.github.io/DigitalClock/)
 
 ![App Screenshot](ss.png)
 
